@@ -22,9 +22,11 @@ Class TV{
   string marca;
   int voltagem;
   int canal;
+  boolean ligada;
+  int consumo;
 
   int aumentarVolume(){
-    if(volume<10){
+    if(volume<=10){
       volume++;
     }
     return volume;
@@ -36,5 +38,27 @@ Class TV{
     }
     return volume;
   }
-int voltagem(){
+  void ligar(){
+   ligada=true;
+   System.out.println("Tv ligada");
+   consumo=voltagem*tamanho;
+    System.out.println("consumo " + consumo);
+  }
   
+ void desligar(){
+   ligada=false;
+   System.out.println("Tv desligada");
+  }
+
+  void SubirCanal(){
+    canal++;
+    System.out.println("canal subiu");
+  }
+  void DescerCanal(){
+    if(canal>1){
+    canal--;
+    System.out.println("canal desceu");
+    }else{
+      System.out.println("ja ta no primeiro  canal");
+  } 
+}
